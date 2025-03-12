@@ -1,0 +1,112 @@
+{
+    "usuarios": [
+      {
+        "id": 1,
+        "nombre": "Juan",
+        "apellido": "Pérez",
+        "direccion": "Calle Falsa 123",
+        "provincia": "Buenos Aires",
+        "pais": "Argentina",
+        "localidad": "La Plata",
+        "codigoPostal": "1900",
+        "email": "juan.perez@example.com",
+        "usuario": "juanpe",
+        "contraseña": "12345",
+        "telefono": "123456789",
+        "mascotas": [
+          {
+            "id": 1,
+            "nombre": "Firulais",
+            "edad": 5,
+            "peso": 20,
+            "sexo": "Macho",
+            "alergias": [
+              {
+                "tipo": "Polen",
+                "tratamiento": "Antihistamínicos"
+              }
+            ],
+            "medicamentos": ["Vitamina C", "Antipulgas"],
+            "datosMedicos": "Vacunado contra rabia",
+            "veterinaria": {
+              "id": 1,
+              "nombre": "VetCare",
+              "nroCliente": "A123",
+              "telefono": "987654321",
+              "plan": "Premium",
+              "direccion": "Av. Libertador 456"
+            },
+            "seguro": "Seguro Mascotas Plus",
+            "notas": ["Le gusta correr en el parque"],
+            "observaciones": ["Tendencia a engordar"],
+            "comentarioVet": "Buen estado general",
+            "dueño": {
+              "id": 1,
+              "nombre": "Juan",
+              "apellido": "Pérez",
+              "direccion": "Calle Falsa 123",
+              "provincia": "Buenos Aires",
+              "pais": "Argentina",
+              "localidad": "La Plata",
+              "codigoPostal": "1900",
+              "email": "juan.perez@example.com",
+              "usuario": "juanpe",
+              "contraseña": "12345",
+              "telefono": "123456789",
+              "mascotas": []
+            }
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "nombre": "Ana",
+        "apellido": "Gómez",
+        "direccion": "Calle Los Álamos 45",
+        "provincia": "Córdoba",
+        "pais": "Argentina",
+        "localidad": "Villa Carlos Paz",
+        "codigoPostal": "5152",
+        "email": "ana.gomez@example.com",
+        "usuario": "anita",
+        "contraseña": "password",
+        "telefono": "1122334455",
+        "mascotas": [
+          {
+            "id": 2,
+            "nombre": "Luna",
+            "edad": 3,
+            "peso": 10,
+            "sexo": "Hembra",
+            "datosMedicos": "Desparasitada",
+            "veterinaria": {
+              "id": 2,
+              "nombre": "PetCare",
+              "nroCliente": "B456",
+              "telefono": "987123456",
+              "plan": "Básico",
+              "direccion": "Calle Principal 789"
+            },
+            "seguro": "Plan Mascota Feliz",
+            "observaciones": ["Muy sociable"],
+            "comentarioVet": "Dentadura saludable",
+            "dueño": {
+              "id": 2,
+              "nombre": "Ana",
+              "apellido": "Gómez",
+              "direccion": "Calle Los Álamos 45",
+              "provincia": "Córdoba",
+              "pais": "Argentina",
+              "localidad": "Villa Carlos Paz",
+              "codigoPostal": "5152",
+              "email": "ana.gomez@example.com",
+              "usuario": "anita",
+              "contraseña": "password",
+              "telefono": "1122334455",
+              "mascotas": []
+            }
+          }
+        ]
+      }
+    ]
+  }
