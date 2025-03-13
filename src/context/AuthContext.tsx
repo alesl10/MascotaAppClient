@@ -13,7 +13,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined)
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const [token, setToken] = useState<string | null>(localStorage.getItem('token'));
-    const [user, setUser] = useState<{ message: string, userId: number, usuario: string } | null>(null);
+    const [user, setUser] = useState<{ message: string, userId: number, usuario: string, avatar: string } | null>(null);
 
     useEffect(() => {
         const storedToken = localStorage.getItem('token');
@@ -27,8 +27,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const fetchProfile = async () => {
         try {
             const response = await axios.get('/perfil')
-            const { message, userId, usuario } = response.data;
-            setUser({ message, userId, usuario });
+            const { message, userId, usuario, avatar } = response.data;
+            setUser({ message, userId, usuario, avatar });
         } catch (error) {
             console.error("error al obtener el perfil", error)
             logout()

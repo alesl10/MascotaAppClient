@@ -1,21 +1,16 @@
-import { Mascota, Usuario } from '../types'
+import { Usuario } from '../types'
 import axios from './axios'
 
 type LoginData = Pick<Usuario, 'usuario' | 'contraseña'>;
 
-export const getUsuarios = async (): Promise<Mascota[]> => {
-    try {
-        const response = await axios.get<Mascota[]>('mascotas/1')
-        return response.data
-    } catch (error) {
-        console.log(error)
-        throw error
-    }
-}
 
-export const createUser = async (usuario: Usuario): Promise<string> => {
+export const createUser = async (usuario: FormData): Promise<string> => {
     try {
-        const response = await axios.post('usuario', usuario)
+        const response = await axios.post('usuario', usuario, {
+            headers:{
+                "Content-Type":"multipart/form-data"
+            }
+        })
         return response.data
     } catch (error) {
         console.log(error)

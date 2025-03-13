@@ -24,19 +24,29 @@ const LoginComponent = () => {
     }
 
     return (
-        <div className='bg-amber-200 border-3 min-w-[500px] border-blue-400 p-6 rounded-xl'>
-            <h4 className='text-xl text-blue-700 font-bold'>Iniciar Sesión</h4>
-            <form className="flex flex-col gap-2 my-5" onSubmit={handleSubmit(onSubmit)}>
-                <input className=' bg-white rounded-md' defaultValue="Username" {...register("usuario", { required: true })} />
-                {errors.usuario && <span className='text-red-500'>Este campo es obligatorio</span>}
 
-                <input className=' bg-white rounded-md' type='password' defaultValue="*****" {...register("contraseña", { required: true })} />
-                {errors.contraseña && <span className='text-red-500'>Este campo es obligatorio</span>}
-                <div className='flex gap-2 justify-center'>
-                    <button type='submit'>Iniciar</button>
-                    <Link to={'/register'}><button>Registrarse</button></Link>
+        <div className="bg-[#504B38] m-auto border-3 min-w-[600px]  border-gray-200 shadow-xl p-6 rounded-xl relative z-10">
+            <h4 className="text-3xl text-[#F8F3D9] font-bold">Iniciar Sesión</h4>
+            <form className="flex flex-col gap-3 my-5" onSubmit={handleSubmit(onSubmit)}>
+                <input className="bg-white rounded-md text-2xl" placeholder="Usuario" {...register("usuario", { required: true })} />
+                {errors.usuario && <span className="text-red-500">Este campo es oblig3torio</span>}
+
+                <input className="bg-white rounded-md text-2xl" type="password" placeholder="Contraseña" {...register("contraseña", { required: true })} />
+                {errors.contraseña && <span className="text-red-500">Este campo es obligatorio</span>}
+
+                <div className="flex gap-2 justify-center">
+                    <button type="submit" className='text-secondary'>Iniciar</button>
+                    <Link to={'/register'}>
+                        <button className='text-secondary'>Registrarse</button>
+                    </Link>
                 </div>
             </form>
+
+            <img
+                src="/imgSinFondo.png"
+                className="absolute top-1/2 left-[570px] transform -translate-y-1/2  max-w-[115px] sombra"
+                alt="Imagen de inicio"
+            />
         </div>
 
     )

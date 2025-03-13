@@ -12,6 +12,7 @@ export interface Usuario {
     contraseña: string
     telefono: string
     mascotas?: Mascota[]
+    avatar:string
 }
 
 export interface Mascota {
@@ -22,13 +23,15 @@ export interface Mascota {
     sexo: string
     alergias?: Alergia[]
     medicamentos?: string[]
-    datosMedicos?: string
+    datosMedicos: string
     veterinaria?: Veterinaria
     seguro?: string
     notas?: string[]
     observaciones?: string[]
     comentarioVet?: string
     dueño:Usuario
+    foto?:string | null
+    usuario_id?:number | null
 }
 
 export interface Alergia {
