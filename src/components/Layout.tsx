@@ -9,10 +9,10 @@ const Layout = () => {
             <Header />
 
             <main className="flex-1">
-                <Outlet />  
+                <Outlet />
             </main>
 
-            <footer className="bg-gray-800 text-center text-white">
+            <footer className=" text-primary text-center font-semibold ">
                 © 2025 - Huella Digital - Todos los derechos reservados
             </footer>
         </div>

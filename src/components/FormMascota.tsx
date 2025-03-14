@@ -42,9 +42,7 @@ const FormMascota = () => {
     };
 
     return (
-        <main className='flex justify-center items-center flex-1'>
-            <div className='bg-amber-200 border-3 min-w-[500px] border-blue-400 p-6 rounded-xl'>
-                <h4 className='text-xl text-blue-700 font-bold'>Registro de Mascotas</h4>
+
                 <form className="flex flex-col gap-2 my-5 text-xl font-semibold" onSubmit={handleSubmit(onSubmit)}>
 
                     <div className=' flex gap-2'>
@@ -90,8 +88,6 @@ const FormMascota = () => {
 
                     <button type='submit' className="m-auto">Agregar</button>
                 </form>
-            </div>
-        </main>
     )
 }
 

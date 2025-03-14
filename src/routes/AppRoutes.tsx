@@ -1,30 +1,39 @@
 import { Route, Routes } from 'react-router-dom'
-import Home from '../pages/Home'
-import Register from '../pages/Register'
-import ProtectedRoute from '../components/ProtectedRoute'
+// pages
+import { Home, Contacto, Register, Login, RegistroMascota, Perfil } from '../pages/index'
 import Layout from '../components/Layout'
-import Login from '../pages/Login'
+import ProtectedRoute from '../components/ProtectedRoute'
 import PublicRoute from '../components/PublicRoute'
 import MascotaDetail from '../components/MascotaDetail'
-import FormMascota from '../components/FormMascota'
 
 const AppRoutes = () => {
     return (
         <Routes>
 
             {/* Rutas publicas */}
-                <Route path='/' element={<PublicRoute><Login /></PublicRoute>} />
-                <Route path='/register' element={<PublicRoute><Register /></PublicRoute>} />
+            <Route path='/' element={<PublicRoute><Login /></PublicRoute>} />
+            <Route path='/register' element={<PublicRoute><Register /></PublicRoute>} />
 
 
-                <Route element={<Layout />}>
-                    <Route path='/home' element={<ProtectedRoute><Home /></ProtectedRoute>} />
-                    <Route path='/mascota/:id' element={<ProtectedRoute><MascotaDetail /></ProtectedRoute>} />
-                    <Route path='/mascota' element={<ProtectedRoute><FormMascota /></ProtectedRoute>} />
-                    {/* Rutas protegidas */}
-                    <Route path='/profile' element={<ProtectedRoute><div>Ruta protegida</div></ProtectedRoute>} />
+            {/* Rutas protegidas */}
+            <Route path='/*' element={<Layout />}>
+                <Route path='home' element={<ProtectedRoute><Home /></ProtectedRoute>} />
+                <Route path='mascota/:id' element={<ProtectedRoute><MascotaDetail /></ProtectedRoute>} />
+                <Route path='agregarmascota' element={<ProtectedRoute><RegistroMascota /></ProtectedRoute>} />
+                <Route path='profile' element={<ProtectedRoute><Perfil/></ProtectedRoute>} />
+                <Route path='contacto' element={<ProtectedRoute><Contacto /></ProtectedRoute>} />
+                <Route path='*' element={
+                    <div className="w-full h-full text-4xl bg-white text-center flex justify-center items-center">
+                        <img src="/404_page-not-found-1024x576.webp" alt="" />
+                    </div>}
+                />
+            </Route>
 
-                </Route>
+            <Route path='*' element={
+                <div className="w-full h-full text-4xl bg-white text-center flex justify-center items-center">
+                    <img src="/404_page-not-found-1024x576.webp" alt="" className=''/>
+                </div>}
+            />
         </Routes>
     )
 }

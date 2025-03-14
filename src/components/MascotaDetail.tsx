@@ -30,22 +30,32 @@ const MascotaDetail = () => {
     if (!mascota) return <div>No se encontró la mascota</div>
 
     return (
-        <div className=' flex flex-col gap-1 font-semibold px-5 items-center'>
-            <h1>{mascota.nombre}</h1>
-            <div>
-                <span>Edad: {mascota.edad} años</span>
-                <span> {mascota.peso} KG </span>
-                <span> {mascota.sexo} </span>
+        <div className=' flex font-semibold gap-10 p-10 items-start h-full container m-auto justify-center rounded-md sombra '>
+
+            <div className='w-1/3'>
+                <img src={`http://localhost:8080${mascota.foto}`} alt="" className='w-full object-cover object-top rounded-md sombra' />
             </div>
 
-            <span> {mascota.datosMedicos} </span>
+            <div className='flex flex-col justify-between  gap-10'>
+                <div className='flex flex-col gap-1 text-xl'>
+                    <h1 className='text-6xl font-bold text-primary'>{mascota.nombre}</h1>
+                    <span>Edad: {mascota.edad} años</span>
+                    <span> Peso: {mascota.peso} KG </span>
+                    <span> Sexo: {mascota.sexo} </span>
+                    <span> Datos medicos: {mascota.datosMedicos} </span>
+                </div>
 
-            <h5 className='text-2xl'>Datos del Dueño</h5>
-            <div>
-                <span>Email: {mascota.dueño.email} </span>
-                <span>Nombre: {mascota.dueño.nombre} </span>
-                <span>Apellido: {mascota.dueño.apellido} </span>
-                <span>Celular: {mascota.dueño.telefono} </span>
+                <div className='flex flex-col gap-4'>
+                    <div className='bg-primary/80 text-secondary rounded-md px-5'>
+                        <h5 className='text-4xl'>Datos del Dueño</h5>
+                    </div>
+                    <div className='flex flex-col gap-1'>
+                        <span className='text-xl'>Email: {mascota.dueño.email} </span>
+                        <span className='text-xl'>Nombre: {mascota.dueño.nombre} </span>
+                        <span className='text-xl'>Apellido: {mascota.dueño.apellido} </span>
+                        <span className='text-xl'>Celular: {mascota.dueño.telefono} </span>
+                    </div>
+                </div>
             </div>
         </div>
     )

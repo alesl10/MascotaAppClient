@@ -9,7 +9,7 @@ export interface Usuario {
     codigoPostal: string
     email: string
     usuario: string
-    contraseña: string
+    contrasena: string
     telefono: string
     mascotas?: Mascota[]
     avatar:string

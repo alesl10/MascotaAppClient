@@ -5,21 +5,24 @@ import { useAuth } from '../context/AuthContext'
 
 interface Inputs {
     usuario: string,
-    contraseña: string
+    contrasena: string
 }
 
 const LoginComponent = () => {
     const { login: iniciarSesion } = useAuth()
 
-    const { register, handleSubmit, formState: { errors } } = useForm<Inputs>()
+    const { register, handleSubmit, reset, formState: { errors } } = useForm<Inputs>()
     const onSubmit: SubmitHandler<Inputs> = async (data) => {
         try {
             const response = await login(data)
             console.log(response)
-            iniciarSesion(response)
-        } catch (error) {
-            console.error("No se pudo iniciar sesión")
-            alert("No se pudo iniciar sesión")
+            iniciarSesion(response as string)
+        } catch (error: any) {
+            console.error("No se pudo iniciar sesión", error.message)
+            alert(error.message)
+        }
+        finally {
+            reset()
         }
     }
 
@@ -31,8 +34,8 @@ const LoginComponent = () => {
                 <input className="bg-white rounded-md text-2xl" placeholder="Usuario" {...register("usuario", { required: true })} />
                 {errors.usuario && <span className="text-red-500">Este campo es oblig3torio</span>}
 
-                <input className="bg-white rounded-md text-2xl" type="password" placeholder="Contraseña" {...register("contraseña", { required: true })} />
-                {errors.contraseña && <span className="text-red-500">Este campo es obligatorio</span>}
+                <input className="bg-white rounded-md text-2xl" type="password" placeholder="Contraseña" {...register("contrasena", { required: true })} />
+                {errors.contrasena && <span className="text-red-500">Este campo es obligatorio</span>}
 
                 <div className="flex gap-2 justify-center">
                     <button type="submit" className='text-secondary'>Iniciar</button>
