@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
+import Footer from "./Footer";
 
 const Layout = () => {
 
@@ -12,9 +13,7 @@ const Layout = () => {
                 <Outlet />
             </main>
 
-            <footer className=" text-primary text-center font-semibold ">
-                © 2025 - Huella Digital - Todos los derechos reservados
-            </footer>
+            <Footer/>
         </div>
     )
 }

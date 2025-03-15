@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@fontsource/merienda": "^5.2.5",
     "@tailwindcss/vite": "^4.0.12",
     "axios": "^1.8.2",
     "react": "^19.0.0",

@@ -1,7 +1,8 @@
 import { useForm, SubmitHandler } from 'react-hook-form'
-import { Link } from 'react-router-dom'
 import { login } from '../api/usuario'
 import { useAuth } from '../context/AuthContext'
+import { useState } from 'react'
+import { FiEye, FiEyeOff } from 'react-icons/fi'
 
 interface Inputs {
     usuario: string,
@@ -10,6 +11,7 @@ interface Inputs {
 
 const LoginComponent = () => {
     const { login: iniciarSesion } = useAuth()
+    const [viewPassword, setViewPassword] = useState<boolean>(false)
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm<Inputs>()
     const onSubmit: SubmitHandler<Inputs> = async (data) => {
@@ -28,20 +30,25 @@ const LoginComponent = () => {
 
     return (
 
-        <div className="bg-[#504B38] m-auto border-3 min-w-[600px]  border-gray-200 shadow-xl p-6 rounded-xl relative z-10">
+        <div className="bg-primary/80  border-3 min-w-[600px]  border-gray-200 shadow-xl p-6 rounded-xl relative z-10">
             <h4 className="text-3xl text-[#F8F3D9] font-bold">Iniciar Sesión</h4>
             <form className="flex flex-col gap-3 my-5" onSubmit={handleSubmit(onSubmit)}>
-                <input className="bg-white rounded-md text-2xl" placeholder="Usuario" {...register("usuario", { required: true })} />
+                <input className="bg-white rounded-md text-2xl px-2" placeholder="Usuario" {...register("usuario", { required: true })} />
                 {errors.usuario && <span className="text-red-500">Este campo es oblig3torio</span>}
 
-                <input className="bg-white rounded-md text-2xl" type="password" placeholder="Contraseña" {...register("contrasena", { required: true })} />
-                {errors.contrasena && <span className="text-red-500">Este campo es obligatorio</span>}
+                <div className='relative'>
+                    <input className="bg-white w-full rounded-md text-2xl px-2" type={`${viewPassword ? 'text' : 'password'}`} placeholder="Contraseña" {...register("contrasena", { required: true })} />
+                    {errors.contrasena && <span className="text-red-500">Este campo es obligatorio</span>}
+                    <div
+                        className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-600 cursor-pointer"
+                        onClick={() => setViewPassword(!viewPassword)}
+                    >
+                        {viewPassword ? <FiEyeOff size={24} /> : <FiEye size={24} />}
+                    </div>
+                </div>
 
                 <div className="flex gap-2 justify-center">
-                    <button type="submit" className='text-secondary'>Iniciar</button>
-                    <Link to={'/register'}>
-                        <button className='text-secondary'>Registrarse</button>
-                    </Link>
+                    <button type="submit" className='text-primary bg-secondary rounded-2xl '>Iniciar</button>
                 </div>
             </form>
 
