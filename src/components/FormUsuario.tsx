@@ -2,10 +2,10 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import { Usuario } from '../types'
 import { createUser } from '../api/usuario'
 import Swal from 'sweetalert2'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const FormUsuario = () => {
-const navigate = useNavigate()
+    const navigate = useNavigate()
     const { register, handleSubmit, reset } = useForm<Usuario>()
     const onSubmit: SubmitHandler<Usuario> = async (data) => {
         try {
@@ -34,15 +34,15 @@ const navigate = useNavigate()
                 title: "Usuario Registrado! ",
                 icon: "success",
                 draggable: true
-              });
-              navigate('/')
-        } catch (error:any) {
+            });
+            navigate('/')
+        } catch (error: any) {
             console.error("Hubo un error al registrar")
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
                 text: error.message || 'No se pudo registrar',
-              });
+            });
         } finally {
             reset()
         }
@@ -50,12 +50,12 @@ const navigate = useNavigate()
 
 
     return (
-        <div className='container mx-auto  flex justify-center p-10 '>
+        <div className='container mx-auto  flex justify-center  '>
 
-            <form className="flex flex-col gap-2 my-5 text-xl font-semibold " onSubmit={handleSubmit(onSubmit)}>
+            <form className="flex flex-col gap-2 text-xl font-semibold " onSubmit={handleSubmit(onSubmit)}>
                 <div className='flex gap-2'>
 
-                    <div className='flex flex-col gap-2 w-1/2'>
+                    <div className='flex flex-col gap-1 w-1/2'>
 
                         <label className=' text-primary'>Usuario</label>
                         <input
@@ -102,7 +102,7 @@ const navigate = useNavigate()
                         />
                     </div>
 
-                    <div className='flex flex-col gap-2 w-1/2'>
+                    <div className='flex flex-col gap-1 w-1/2'>
 
                         <label className=' text-primary'>Provincia</label>
                         <input
@@ -149,8 +149,8 @@ const navigate = useNavigate()
                 </div>
 
                 <div className='flex gap-2 justify-center'>
-                    <button type='submit' className=" text-white">Registrar</button>
-                    <button className='text-red-900'>Cancelar</button>
+                    <button type='submit' className=" text-white rounded-2xl bg-primary/70">Registrar</button>
+                    <Link to={'/'}><button className='text-red-200 rounded-2xl bg-primary/70'>Cancelar</button></Link>
                 </div>
             </form>
         </div>

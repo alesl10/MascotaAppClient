@@ -31,11 +31,12 @@ export const Home = () => {
     return (
         <div className='flex flex-col items-center justify-center gap-5'>
 
-            <div className="w-full flex justify-center bg-primary/80 h-[100px]">
+            <div className="w-full flex justify-center bg-primary/20 h-[100px]">
                 <div className="container p-5">
-                    <h3 className="text-xl font-semibold text-fondo">Mis Mascotas</h3>
-                    <span className="text-4xl text-secondary">Administra tus mascotas</span>
+                    <h3 className="text-xl font-semibold text-primary/60 sombra ">Mis Mascotas</h3>
+                    <span className="text-4xl text-primary/70 sombra">Administra tus mascotas</span>
                 </div>
+                <img src="/mascotas.png" alt="mascotas imagen" className=" object-contain sombra" />
             </div>
 
 
@@ -46,7 +47,7 @@ export const Home = () => {
             ) : (
                 <div>No tienes mascotas.</div>
             )}
-            <Link to={'/agregarmascota'}><button className="text-secondary ">Agregar Mascota</button></Link>
+            <Link to={'/agregarmascota'}><button className="text-primary/70 bg-primary/20 rounded-2xl text-xl font-semibold hover:saturate-150 transition-all ">Agregar Mascota</button></Link>
         </div>
     )
 };

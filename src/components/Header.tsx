@@ -13,7 +13,7 @@ const Header = () => {
   }, [user])
 
   return (
-    <header className=" p-5 flex items-end justify-between font-semibold border-b-primary/80 border-b-2 shadow-md">
+    <header className=" p-5 flex items-end justify-between font-semibold  shadow-md">
       <Link to={'/'} className="flex items-end gap-2 cursor-pointer">
         <img src="/huella.png" className=" max-w-[80px] " alt="" />
         <div>

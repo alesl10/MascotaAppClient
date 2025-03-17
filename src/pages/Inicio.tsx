@@ -2,16 +2,15 @@ import { useState } from "react"
 import LoginComponent from "../components/LoginComponent"
 import { Link } from "react-router-dom"
 import Footer from "@/components/Footer"
-import { Contacto } from "./Contacto"
 
 export const Login = () => {
 
   const [loginVisible, setLoginVisible] = useState<boolean>(false)
 
   return (
-    <div className='flex flex-col gap-20 w-full bg-secondary/10 '>
+    <div className='flex flex-col gap-20 w-full  '>
 
-      <section className="w-full h-svh  top-0 p-10 flex justify-between " style={{ backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, rgba(255, 255, 255, 1)), url('/banner.jpg')`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center 20%' }} >
+      <section className="w-full h-svh  top-0 p-10 flex justify-between  " style={{ backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, rgba(255, 255, 240, 1)), url('/banner.jpg')`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center 20%' }} >
         <div className="">
           <h1 className=" text-primary text-8xl  sombra-texto ">Huellita Digital</h1>
           <span className="px-2 text-3xl bg-primary rounded-sm text-secondary sombra-texto-claro">No pierdas nunca un amigo</span>
@@ -26,7 +25,7 @@ export const Login = () => {
       </section>
 
       {/* // segunda seccion */}
-      <section className=" container flex items-center justify-center  m-auto relative ">
+      <section className=" container flex items-center justify-center  m-auto relative " >
         <h2 className="text-[9rem] font-bold text-primary/50  absolute -top-10">SERVICIOS</h2>
 
         <img src="/gatoSinFondo.png" alt="" className="w-1/2 sombra top-0 " />

@@ -1,6 +1,6 @@
 export * from './Contacto'
 export * from './Home'
-export * from './Login'
+export * from './Inicio'
 export * from './Register'
 export * from './RegistroMascota'
 export * from './Perfil'
