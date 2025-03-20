@@ -5,6 +5,7 @@ import Layout from '../components/Layout'
 import ProtectedRoute from '../components/ProtectedRoute'
 import PublicRoute from '../components/PublicRoute'
 import MascotaDetail from '../components/MascotaDetail'
+import NotFound from '@/components/NotFound'
 
 const AppRoutes = () => {
     return (
@@ -20,19 +21,15 @@ const AppRoutes = () => {
                 <Route path='home' element={<ProtectedRoute><Home /></ProtectedRoute>} />
                 <Route path='mascota/:id' element={<ProtectedRoute><MascotaDetail /></ProtectedRoute>} />
                 <Route path='agregarmascota' element={<ProtectedRoute><RegistroMascota /></ProtectedRoute>} />
-                <Route path='profile' element={<ProtectedRoute><Perfil/></ProtectedRoute>} />
+                <Route path='profile' element={<ProtectedRoute><Perfil /></ProtectedRoute>} />
                 <Route path='contacto' element={<ProtectedRoute><Contacto /></ProtectedRoute>} />
                 <Route path='*' element={
-                    <div className="w-full h-full text-4xl bg-white text-center flex justify-center items-center">
-                        <img src="/404_page-not-found-1024x576.webp" alt="" />
-                    </div>}
+                    <NotFound />}
                 />
             </Route>
 
             <Route path='*' element={
-                <div className="w-full h-full text-4xl bg-white text-center flex justify-center items-center">
-                    <img src="/404_page-not-found-1024x576.webp" alt="" className=''/>
-                </div>}
+                <NotFound />}
             />
         </Routes>
     )

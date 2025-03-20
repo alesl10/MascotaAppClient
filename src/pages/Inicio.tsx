@@ -28,7 +28,7 @@ export const Login = () => {
       <section className=" container flex items-center justify-center  m-auto relative " >
         <h2 className="text-[9rem] font-bold text-primary/50  absolute -top-10">SERVICIOS</h2>
 
-        <img src="/gatoSinFondo.png" alt="" className="w-1/2 sombra top-0 " />
+        <img src="/gatoSinFondo.png" alt="" className="w-1/2 sombra-abajo top-0 " />
 
         <div className="flex  gap-10  justify-end flex-wrap">
           <div className="flex items-center flex-col ">

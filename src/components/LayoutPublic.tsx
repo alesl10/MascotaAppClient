@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 
-const Layout = () => {
+const LayoutPublic = () => {
 
     return (
         <div className="flex flex-col flex-1 bg-secondary/50 shadow-sm">
@@ -18,4 +18,4 @@ const Layout = () => {
     )
 }
 
-export default Layout
+export default LayoutPublic

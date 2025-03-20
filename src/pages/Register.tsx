@@ -4,7 +4,7 @@ import FormUsuario from "../components/FormUsuario"
 export const Register = () => {
 
   return (
-    <div className='flex flex-col flex-1 gap-5 bg- shadow-sm'>
+    <div className='flex flex-col justify-between flex-1 gap-5  shadow-sm'>
       <div className="mx-auto">
         <h1 className=" text-primary text-5xl font-bold sombra-texto ">Huellita Digital</h1>
         <span className="px-2 text-2xl bg-primary rounded-sm text-secondary sombra-texto-claro">No pierdas nunca un amigo</span>

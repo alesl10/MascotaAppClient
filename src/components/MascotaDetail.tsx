@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { getMascotaById } from '../api/mascota'
 import { Mascota } from '../types'
+import VolverBoton from './VolverBoton'
 
 const MascotaDetail = () => {
     const { id } = useParams<{ id: string }>()
@@ -30,7 +31,7 @@ const MascotaDetail = () => {
     if (!mascota) return <div>No se encontró la mascota</div>
 
     return (
-        <div className=' flex font-semibold gap-10 p-10 items-start h-full container m-auto justify-center rounded-md sombra '>
+        <div className=' flex font-semibold gap-10 p-10 items-start  h-full container m-auto justify-center rounded-md sombra bg-secondary/80 '>
 
             <div className='w-1/3'>
                 <img src={`http://localhost:8080${mascota.foto}`} alt="" className='w-full object-cover object-top rounded-md sombra' />
@@ -56,6 +57,7 @@ const MascotaDetail = () => {
                         <span className='text-xl'>Celular: {mascota.dueño.telefono} </span>
                     </div>
                 </div>
+                <VolverBoton />
             </div>
         </div>
     )

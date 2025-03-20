@@ -34,9 +34,9 @@ export const Contacto = () => {
   };
 
   return (
-    <section className=" container flex flex-col items-center ">
+    <section className=" container m-auto flex flex-col items-center ">
       <h2 className="text-[6rem] font-bold text-primary/50  ">CONTACTO</h2>
-      <div className=" container flex items-center justify-center relative">
+      <div className=" container  flex items-center justify-center relative">
 
         <div className="flex gap-4 w-[50%] flex-col">
           <form className="relative flex flex-col" ref={form} onSubmit={sendEmail}>

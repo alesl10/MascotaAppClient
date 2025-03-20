@@ -29,7 +29,7 @@ export const Home = () => {
 
 
     return (
-        <div className='flex flex-col items-center justify-center gap-5'>
+        <div className='flex flex-col flex-1 items-center gap-5' >
 
             <div className="w-full flex justify-center bg-primary/20 h-[100px]">
                 <div className="container p-5">
@@ -39,15 +39,17 @@ export const Home = () => {
                 <img src="/mascotas.png" alt="mascotas imagen" className=" object-contain sombra" />
             </div>
 
+            <div className="w-full flex-1 p-5 flex flex-col items-center gap-5" >
 
-            {loading ? (
-                <div>Cargando mascotas...</div>
-            ) : mascotas && mascotas.length > 0 ? (
-                <MascotasContainer mascotas={mascotas} />
-            ) : (
-                <div>No tienes mascotas.</div>
-            )}
-            <Link to={'/agregarmascota'}><button className="text-primary/70 bg-primary/20 rounded-2xl text-xl font-semibold hover:saturate-150 transition-all ">Agregar Mascota</button></Link>
+                {loading ? (
+                    <div>Cargando mascotas...</div>
+                ) : mascotas && mascotas.length > 0 ? (
+                    <MascotasContainer mascotas={mascotas} />
+                ) : (
+                    <div>No tienes mascotas.</div>
+                )}
+                <Link to={'/agregarmascota'}><button className="text-fondo bg-primary rounded-2xl text-xl font-semibold hover:saturate-150 transition-all ">Agregar Mascota</button></Link>
+            </div>
         </div>
     )
 };

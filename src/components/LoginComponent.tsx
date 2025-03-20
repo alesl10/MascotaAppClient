@@ -34,7 +34,7 @@ const LoginComponent = () => {
             <h4 className="text-3xl text-[#F8F3D9] font-bold">Iniciar Sesión</h4>
             <form className="flex flex-col gap-3 my-5" onSubmit={handleSubmit(onSubmit)}>
                 <input className="bg-white rounded-md text-2xl px-2" placeholder="Usuario" {...register("usuario", { required: true })} />
-                {errors.usuario && <span className="text-red-500">Este campo es oblig3torio</span>}
+                {errors.usuario && <span className="text-red-500">Este campo es obligatorio</span>}
 
                 <div className='relative'>
                     <input className="bg-white w-full rounded-md text-2xl px-2" type={`${viewPassword ? 'text' : 'password'}`} placeholder="Contraseña" {...register("contrasena", { required: true })} />
